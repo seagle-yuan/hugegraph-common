@@ -478,7 +478,8 @@ public abstract class AbstractRestClient implements RestClient {
         }
 
         HostnameVerifier verifier = new HostNameVerifier(url);
-        ConnectionSocketFactory httpSocketFactory, httpsSocketFactory;
+        ConnectionSocketFactory httpSocketFactory;
+        ConnectionSocketFactory httpsSocketFactory;
         httpSocketFactory = PlainConnectionSocketFactory.getSocketFactory();
         httpsSocketFactory = new SSLConnectionSocketFactory(context, verifier);
         Registry<ConnectionSocketFactory> registry =
